@@ -29,6 +29,7 @@ function App() {
   ];
 
   return (
+    //App > Expenses > ExpenseItem > Card > ExpenseDate
     <div>
       <h2>Let's get started!</h2>
       <Expenses expenses={expenses}></Expenses>
