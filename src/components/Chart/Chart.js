@@ -7,14 +7,18 @@ const Chart = (props) => {
 
   return (
     <div className="chart">
-      {props.dataPoints.map((dataPoint) => (
-        <ChartBar
-          key={dataPoint.label} //預設是每個data的label都獨一無二
-          value={dataPoint.value}
-          maxValue={null}
-          label={dataPoint.label}
-        ></ChartBar> //maxValue用來作分母，對所有data都應是同樣的數值
-      ))}
+      {props.dataPoints.map(
+        (
+          dataPoint //等於ChartBar在迴圈裡，產生很多個
+        ) => (
+          <ChartBar
+            key={dataPoint.label} //預設是每個data的label都獨一無二
+            value={dataPoint.value}
+            maxValue={totalMaximum}
+            label={dataPoint.label}
+          ></ChartBar> //maxValue用來作分母，對所有data都應是同樣的數值
+        )
+      )}
     </div>
   );
 };

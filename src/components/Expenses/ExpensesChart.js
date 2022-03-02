@@ -20,8 +20,10 @@ const ExpensesChart = (props) => {
     //props.expenses 是array不是obj所以要用of不能用in
 
     const expenseMonth = expense.date.getMonth();
-    console.log(expenseMonth);
     chartDataPoints[expenseMonth].value += expense.amount;
+    console.log("----------");
+    console.log(expense);
+    console.log(chartDataPoints);
   }
 
   return <Chart dataPoints={chartDataPoints}></Chart>;
